@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Monster File Upload Blocker",
+  "version": "1.0",
+  "description": "Monitor url and block file upload",
+  "permissions": ["webRequest", "webNavigation", "activeTab"],
+  "host_permissions": ["http://*/*", "https://*/*", "file:///"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "128": "128.png"
+  },
+  "update_url": "https://www.hsohabracada.com/manifest.xml"
+}
